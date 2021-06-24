@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node -e \"(async () => console.log(await require('./index').handler({})))();\"",
+    "test": "node -e \"(async () => console.log(await require('./attentive-opt-in').handler({phone: '91834332321'})))();\"",
     "secrets": "node -e \"(async () => console.log(await require('./secrets').handler({})))();\""
   },
   "keywords": [],
