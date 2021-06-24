@@ -7,7 +7,7 @@ exports.handler = async (event) => {
     let subscriptionGroupId = event.subscriptionGroupId;
     let error;
     const subscriptionGroup = "messageType";
-    const apiKey = event.apiKey;
+    const apiKey = process.env.apiKey;
     let responseFromIterable;
     let iterableErrorMsg = '';
     let iterableErrorCode = '';
