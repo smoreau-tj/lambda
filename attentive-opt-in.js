@@ -1,27 +1,37 @@
 const fetch = require('node-fetch');
-const dotenv = require('dotenv').config;
+require('dotenv').config();
 
-const url = `https://rickandmortyapi.com/api/character`
+const url = `https://api.attentivemobile.com/v1/subscriptions`
 
-const getCharacters = async () => {
+const reqAttentive = async (requestOptions) => {
   try {
-    const response = await fetch(url)
+    const response = await fetch(url , requestOptions)
     const data = await response.json()
     return data
   } catch (error) {
     console.log('something went wrong: ', error)
   }
 }
-async function main(event) {
 
-  let statusCode
-  let body = event.phone
-  const data = await getCharacters()
+async function main(event) {
+  const requestOptions = {
+    method: 'POST',
+    headers: { 
+      'Authorization': `Bearer ${process.env.REACT_APP_ATTENTIVE_KEY}` ,
+      'Content-Type': 'application/json'
+    },
+    body: {
+      "user": {
+        "phone": event.phone
+      },
+      "signUpSourceId": "103131"
+    }
+  };
+
+  const data = await reqAttentive(requestOptions)
   
-  statusCode
   let response = {
-    statusCode,
-    body: JSON.stringify(body)
+    response: data
   }
 
   return response

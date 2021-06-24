@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node -e \"(async () => console.log(await require('./attentive-opt-in').handler({phone: '91834332321'})))();\"",
+    "test": "node -e \"(async () => console.log(await require('./attentive-opt-in').handler({phone: '+17767024116'})))();\"",
     "secrets": "node -e \"(async () => console.log(await require('./secrets').handler({})))();\""
   },
   "keywords": [],
@@ -13,6 +13,7 @@
   "dependencies": {
     "aws-sdk": "^2.916.0",
     "dotenv": "^10.0.0",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "node-fetch": "^2.6.1"
   }
 }
