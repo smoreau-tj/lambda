@@ -1,4 +1,5 @@
 const fetch = require('node-fetch');
+const dotenv = require('dotenv').config;
 
 const url = `https://rickandmortyapi.com/api/character`
 
