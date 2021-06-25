@@ -31,7 +31,8 @@ async function main(event) {
   const data = await reqAttentive(requestOptions)
   
   let response = {
-    response: data
+    statusCode: data.status,
+    body : JSON.stringify(data)
   }
 
   return response
