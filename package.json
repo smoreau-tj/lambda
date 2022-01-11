@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node -e \"(async () => console.log(await require('./iterable-opt-out').handler({userEmail:'tyler.tremblay@aretove.com',subscriptionGroupId:'37975',apiKey:''})))();\"",
+    "test": "node -e \"(async () => console.log(await require('./iterable-opt-in').handler({userEmail:'pooja.patil@tommyjohnwear.com',apiKey:'f5cf354063e94fc6a2d0bc4c58962a34'})))();\"",
     "secrets": "node -e \"(async () => console.log(await require('./secrets').handler({})))();\""
   },
   "keywords": [],
